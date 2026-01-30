@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gallery | Bright Institute of Agriculture – Masindi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f6f4;
+  color:#1b1b1b;
+}
+
+/* HEADER */
+header{
+  background:#1b5e20;
+  color:#fff;
+  padding:15px 25px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+header img{height:55px;}
+header h1{
+  font-size:22px;
+  margin:0;
+  line-height:1.2;
+}
+header span{
+  font-size:14px;
+  opacity:0.9;
+}
+
+/* SECTION */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+h2,h3{color:#1b5e20;}
+
+/* INTRO */
+.intro{
+  max-width:800px;
+  margin-bottom:40px;
+  font-size:16px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.item img,
+.item video{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:14px;
+  background:#ddd;
+}
+
+.caption{
+  margin-top:8px;
+  font-size:14px;
+  color:#333;
+}
+
+/* JOIN MESSAGE */
+.join-us{
+  margin-top:60px;
+  text-align:center;
+  background:#e6f2e6;
+  padding:40px 20px;
+  border-radius:16px;
+}
+
+.join-us h3{
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+.join-us p{
+  max-width:700px;
+  margin:0 auto 20px;
+  font-size:16px;
+}
+
+.join-us a{
+  display:inline-block;
+  padding:14px 32px;
+  background:#1b5e20;
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  background:#1b5e20;
+  color:#fff;
+  text-align:center;
+  padding:30px;
+}
+
+/* WHATSAPP */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:18px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="Bright Institute Logo">
+  <div>
+    <h1>Bright Institute of Agriculture</h1>
+    <span>Masindi, Uganda</span>
+  </div>
+</header>
+
+<section>
+
+  <div class="intro">
+    <h3>Life at Bright Institute of Agriculture</h3>
+    <p>
+      Our gallery showcases hands-on agricultural training, classroom learning,
+      field practicals, and community engagement. Students gain real-world skills
+      under the guidance of experienced instructors.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <div class="item">
+      <img src="class.jpg" alt="Classroom learning">
+      <div class="caption">
+        Students during classroom sessions learning agricultural theory and farm management.
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="prac.png" alt="Practical agricultural training">
+      <div class="caption">
+        Practical field training where students apply classroom knowledge on the farm.
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="teacher.jpg" alt="Instructor guiding students">
+      <div class="caption">
+        An instructor guiding students through practical vegetable production and crop care.
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="stuff.jpg" alt="Students and staff">
+      <div class="caption">
+        Students and staff working together in a supportive learning environment.
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="com.jpg" alt="Community outreach">
+      <div class="caption">
+        Community outreach activities promoting sustainable agriculture and food security.
+      </div>
+    </div>
+
+    <div class="item">
+      <video controls>
+        <source src="vid.mp4" type="video/mp4">
+      </video>
+      <div class="caption">
+        Practical demonstrations and training sessions during field activities.
+      </div>
+    </div>
+
+    <div class="item">
+      <video controls>
+        <source src="tik.mp4" type="video/mp4">
+      </video>
+      <div class="caption">
+        Student participation and hands-on learning moments at the institute.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="join-us">
+    <h3>Come Join Us 🌱</h3>
+    <p>
+      Become part of a learning community that values practical skills,
+      innovation, and sustainable agriculture. At Bright Institute of Agriculture,
+      we nurture talent, build confidence, and prepare you for real opportunities
+      in farming and agribusiness.
+    </p>
+    <a href="admission.html">Start Your Journey</a>
+  </div>
+
+  <p style="margin-top:40px;">
+    <a href="index.html">← Back to Home</a>
+  </p>
+
+</section>
+
+<footer>
+  <p>© 2026 Bright Institute of Agriculture – Masindi</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/256772469055">💬</a>
+
+</body>
+</html>

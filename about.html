@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | Bright Institute of Agriculture – Masindi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green-dark:#1b5e20;
+  --green-main:#2e7d32;
+  --green-soft:#eaf5ec;
+  --text-dark:#000000;
+  --text-soft:#37474f;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(180deg,#eef7f0,#f9fcfa);
+  color:var(--text-dark);
+}
+
+header{
+  background:linear-gradient(90deg,#1b5e20,#2e7d32);
+  color:#fff;
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+header img{height:55px;}
+header h1{font-size:22px;margin:0;}
+
+section{
+  max-width:1050px;
+  margin:auto;
+  padding:60px 22px;
+}
+
+.box{
+  background:var(--green-soft);
+  padding:42px;
+  border-radius:22px;
+  box-shadow:0 10px 26px rgba(0,0,0,0.08);
+  margin-bottom:45px;
+  border-left:6px solid var(--green-main);
+}
+
+h2{
+  color:var(--green-dark);
+  margin-top:0;
+  font-size:26px;
+}
+
+p, li{
+  line-height:1.8;
+  font-size:15.5px;
+  color:var(--text-soft);
+}
+
+footer{
+  background:#ffffff;
+  color:#000000;
+  text-align:center;
+  padding:38px 15px;
+  border-top:3px solid #2e7d32;
+}
+footer p{
+  margin:6px 0;
+  color:#000;
+}
+
+/* WHATSAPP */
+.whatsapp-wrap{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  z-index:999;
+}
+.whatsapp-text{
+  background:#fff;
+  padding:8px 14px;
+  border-radius:20px;
+  font-size:13px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+.whatsapp-float{
+  background:#25D366;
+  color:#fff;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+@media(max-width:600px){
+  .whatsapp-text{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo">
+  <h1>Bright Institute of Agriculture – Masindi</h1>
+</header>
+
+<section>
+
+  <div class="box">
+    <h2>Who We Are</h2>
+    <p>
+      Bright Institute of Agriculture – Masindi is a practical-oriented agricultural
+      training institution dedicated to equipping learners with hands-on skills,
+      knowledge, and values required for success in modern agriculture and agribusiness.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Our Location</h2>
+    <p>
+      Masindi Municipality, Kigulya Ward – Kyetegya, about 1km from the Mirya junction
+      of the Masindi–Kampala Highway and Masindi Port Road.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Background & Establishment</h2>
+    <p>
+      Established by <strong>Mr Davis Barungi</strong>, an agribusiness expert,
+      agricultural extensionist, innovative researcher, and educationist.
+    </p>
+  </div>
+
+</section>
+
+<footer>
+  <p>
+    📞 <strong>Director:</strong> 0772 469 055 &nbsp; | &nbsp; 0774 121 456 &nbsp; | &nbsp; 0780 462 929
+  </p>
+  <p>© 2026 Bright Institute of Agriculture – Masindi</p>
+</footer>
+
+<div class="whatsapp-wrap">
+  <div class="whatsapp-text">Chat with us</div>
+  <a class="whatsapp-float" href="https://wa.me/256772469055">💬</a>
+</div>
+
+</body>
+</html>

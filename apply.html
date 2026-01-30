@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Apply Online | Bright Institute of Agriculture – Masindi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f8f4;
+  color:#1b1b1b;
+}
+
+/* HEADER */
+header{
+  background:#1b5e20;
+  color:#fff;
+  padding:15px 25px;
+  display:flex;
+  align-items:center;
+}
+header img{height:55px;margin-right:15px;}
+
+/* SECTION */
+section{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+h2,h3{color:#1b5e20;}
+
+.box{
+  margin-bottom:35px;
+}
+
+/* FORM */
+form input, form select{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+
+button{
+  background:#1b5e20;
+  color:#fff;
+  border:none;
+  padding:14px 30px;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  background:#1b5e20;
+  color:#fff;
+  text-align:center;
+  padding:25px 15px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:16px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo">
+  <h2>Online Application</h2>
+</header>
+
+<section>
+
+  <!-- INTRO -->
+  <div class="box">
+    <h2>Apply Online</h2>
+    <p>
+      Fill in the form below to apply for admission at
+      Bright Institute of Agriculture – Masindi.
+      This application is open to P7, S4, and S6 leavers.
+    </p>
+  </div>
+
+  <!-- APPLICATION FEE -->
+  <div class="box">
+    <h3>Application Fee</h3>
+    <p>
+      A <strong>non-refundable application fee of UGX 50,000</strong>
+      is required for processing all applications.
+      Payment is made <strong>after submitting this form</strong>.
+    </p>
+  </div>
+
+  <!-- IMPORTANT INSTRUCTIONS -->
+  <div class="box">
+    <h3>Important Instructions</h3>
+    <p>
+      After submitting this form, you will be redirected to WhatsApp.
+      Please send the following documents via WhatsApp:
+    </p>
+    <ul>
+      <li>Student passport photo</li>
+      <li>Guardian passport photo</li>
+      <li>PLE / UCE / UACE pass slip or certificate (as applicable)</li>
+      <li>Application fee payment screenshot (UGX 50,000)</li>
+    </ul>
+  </div>
+
+  <!-- FORM -->
+  <div class="box">
+    <form action="https://wa.me/256772469055" method="get">
+      
+      <h3>Student Information</h3>
+      <input type="text" placeholder="Student Full Name" required>
+      <input type="tel" placeholder="Student Phone Number" required>
+
+      <select required>
+        <option value="">Select Academic Level</option>
+        <option>P7 Leaver</option>
+        <option>S4 Leaver</option>
+        <option>S6 Leaver</option>
+      </select>
+
+      <select required>
+        <option value="">Select Course Applying For</option>
+        <option>Junior Vocational Certificate in Agriculture</option>
+        <option>National Certificate in Agriculture</option>
+        <option>National Diploma in Agriculture</option>
+        <option>National Diploma in Animal Production and Management</option>
+        <option>National Diploma in Agribusiness Management</option>
+      </select>
+
+      <h3>Guardian Information</h3>
+      <input type="text" placeholder="Guardian Full Name" required>
+      <input type="tel" placeholder="Guardian Phone Number" required>
+
+      <button type="submit">
+        Submit Application & Continue on WhatsApp
+      </button>
+
+    </form>
+  </div>
+
+  <p><a href="admission.html">← Back to Admissions</a></p>
+
+</section>
+
+<footer>
+  <p>© 2026 Bright Institute of Agriculture – Masindi</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/256772469055">💬</a>
+
+</body>
+</html>
