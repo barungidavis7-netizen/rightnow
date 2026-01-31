@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bright Institute of Agriculture – Masindi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#2e7d32;
+  --dark:#1b5e20;
+  --overlay:rgba(0,0,0,.55);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+}
+
+/* TOP NAV (ELITE STYLE) */
+/* TOP NAV (COMPACT FIX) */
+.navbar{
+  position:fixed;
+  top:0;left:0;width:100%;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:24px;
+  padding:10px 28px;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(6px);
+}
+.navbar img{height:52px;margin-right:10px}
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:14px;
+  margin:0;padding:0;
+  align-items:center;
+}
+.navbar img{height:55px}
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:26px;
+  margin:0;padding:0;
+}
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  letter-spacing:.5px;
+}
+.navbar a.active{color:#7CFC90}
+
+/* HERO SLIDER */
+/* HERO SLIDER */
+.hero-slider{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+  color:#fff;
+}
+.slides{
+  position:absolute;
+  top:0;left:0;
+  width:200%;
+  height:100%;
+  display:flex;
+  animation:slide 12s infinite;
+}
+.slide{
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+}
+@keyframes slide{
+  0%{transform:translateX(0)}
+  45%{transform:translateX(0)}
+  55%{transform:translateX(-50%)}
+  95%{transform:translateX(-50%)}
+  100%{transform:translateX(0)}
+}
+.hero-content{
+  position:relative;
+  z-index:5;
+  max-width:900px;
+  margin:auto;
+  top:50%;
+  transform:translateY(-50%);
+  text-align:center;
+  padding:20px;
+}
+.hero-content span{
+  display:block;
+  margin-bottom:14px;
+  margin-top:40px;
+  color:#7CFC90;
+  font-weight:600;
+  letter-spacing:2px;
+  font-size:15px;
+}
+.hero-content h1{font-size:52px;margin:15px 0}
+.hero-content p{font-size:17px;line-height:1.8}
+.hero-content a{display:inline-block;margin-top:28px;padding:14px 34px;border:2px solid #fff;color:#fff;text-decoration:none;font-weight:600}
+.hero-content{
+  max-width:900px;
+  padding:20px;
+}
+.hero-content span{
+  color:#7CFC90;
+  font-weight:600;
+  letter-spacing:2px;
+}
+.hero-content h1{
+  font-size:52px;
+  margin:15px 0;
+}
+.hero-content p{
+  font-size:17px;
+  line-height:1.8;
+}
+.hero-content a{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 34px;
+  border:2px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* SECTION */
+section{
+  padding:90px 22px;
+}
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+.section-title h2{margin:0;color:var(--dark)}
+
+.programs{
+  max-width:1100px;
+  margin:auto;
+}
+.program-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+.program{
+  background:#f4f4f4;
+  padding:40px 25px;
+  text-align:center;
+}
+
+footer{
+  background:linear-gradient(90deg,var(--dark),var(--green));
+  color:#fff;
+  text-align:center;
+  padding:45px 15px;
+}
+
+.whatsapp-float{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  background:#25D366;
+  width:56px;height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  color:#fff;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <img src="logo.png" alt="Bright Institute">
+  <ul style="list-style:none;display:flex;gap:14px;margin:0;padding:0;flex-wrap:wrap;">
+    <li><a class="active" href="index.html" style="padding:10px 22px;border-radius:30px;background:#fff;color:#1b5e20;font-weight:600;">Home</a></li>
+    <li><a href="about.html" style="padding:10px 22px;border-radius:30px;background:#fff;color:#1b5e20;font-weight:600;">About</a></li>
+    <li><a href="courses.html" style="padding:10px 22px;border-radius:30px;background:#2e7d32;color:#fff;font-weight:600;">Courses</a></li>
+    <li><a href="fees.html" style="padding:10px 22px;border-radius:30px;background:#2e7d32;color:#fff;font-weight:600;">Fees</a></li>
+    <li><a href="gallery.html" style="padding:10px 22px;border-radius:30px;background:#fff;color:#1b5e20;font-weight:600;">Gallery</a></li>
+    <li><a href="admissions.html" style="padding:10px 22px;border-radius:30px;background:#2e7d32;color:#fff;font-weight:600;">Admissions</a></li>
+    
+  </ul>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider">
+  <div class="slides">
+    <div class="slide" style="background-image:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('crop.jpg')"></div>
+    <div class="slide" style="background-image:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('lab2.png')"></div>
+  </div>
+  <div class="hero-content">
+    <span>WELCOME TO</span>
+    <h1>BRIGHT INSTITUTE OF AGRICULTURE<br>MASINDI</h1>
+    <p>
+      A practical agricultural training institute committed to skills development,
+      innovation, and self-reliance for P7, S4 and S6 leavers.
+    </p>
+    <a href="apply.html">APPLY NOW</a>
+  </div>
+</section>
+
+<!-- DIRECTOR SECTION -->
+<section class="director" style="padding:90px 22px;display:flex;justify-content:center;">
+  <div style="max-width:520px;background:#fff;border-radius:22px;overflow:hidden;text-align:center;border:3px solid #cfe6d3;">
+    <img src="director.jpg" alt="Director" style="width:100%;height:320px;object-fit:cover;">
+    <div style="padding:22px;">
+      <h3 style="margin:0;color:#1b5e20;">Mr. Davis Barungi</h3>
+      <p style="margin:6px 0 16px;font-weight:600;">Director</p>
+      <p style="font-size:14px;line-height:1.8;">
+        Mr. Davis Barungi is a professionally trained agricultural specialist with strong academic and practical expertise in sustainable agriculture and project management. His leadership is grounded in formal education, hands-on experience, and a commitment to producing skilled, self-reliant agricultural professionals.
+      </p>
+      <ul style="list-style:none;padding:0;margin:16px 0 0;font-size:14px;line-height:1.8;text-align:left;">
+        <li>• MSc in Agriculture</li>
+        <li>• BSc in Sustainable Agriculture</li>
+        <li>• Diploma in General Agriculture</li>
+        <li>• Postgraduate Training in Project Monitoring & Evaluation</li>
+        <li>• Postgraduate Training in Project Planning & Management</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTOR VIDEO -->
+<section style="max-width:1100px;margin:auto;padding:60px 22px;">
+  <h2 style="text-align:center;color:#1b5e20;">Message from the Director</h2>
+  <video controls style="width:100%;border-radius:24px;">
+    <source src="director-message.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- DIRECTOR GRADUATION -->
+<section style="max-width:1100px;margin:auto;padding:80px 22px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center;">
+    <img src="direct.jpg" alt="Director Graduation" style="width:100%;border-radius:30px;object-fit:cover;box-shadow:0 18px 40px rgba(0,0,0,.18);">
+    <div>
+      <h2 style="color:#2e7d32;">Leadership Grounded in Academic Achievement</h2>
+      <p style="line-height:1.9;font-size:15px;">
+        This graduation milestone represents discipline, resilience, and a lifelong commitment to learning. It reflects leadership shaped not only by vision, but by academic rigor and professional excellence.
+      </p>
+      <p style="line-height:1.9;font-size:15px;">
+        At Bright Institute of Agriculture – Masindi, students are guided by leadership that understands both theory and practice, preparing them to succeed in real agricultural and agribusiness environments.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONVINCING MESSAGE -->
+<section style="background:#f4f7f4;padding:70px 22px;">
+  <div style="max-width:900px;margin:auto;text-align:center;">
+    <h2 style="color:#1b5e20;">Why Choose Bright Institute of Agriculture?</h2>
+    <p style="line-height:2;font-size:16px;">
+      We believe education should empower, transform, and create opportunity. Our programs are practical, affordable, and designed to equip learners with hands-on skills for employment, entrepreneurship, and community impact.
+    </p>
+    <p style="line-height:2;font-size:16px;">
+      With experienced instructors, strong leadership, and a commitment to excellence, Bright Institute of Agriculture is the right place to build a successful future.
+    </p>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section>
+  <div class="section-title">
+    <h2>Academic Programs</h2>
+  </div>
+  <div class="programs">
+    <div class="program-grid">
+      <div class="program">Full‑Time Classes</div>
+      <div class="program">Weekend Classes</div>
+      <div class="program">Holiday Programs</div>
+      <div class="program">Long‑Distance Learning</div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;padding:70px 20px;">
+  <div style="max-width:1100px;margin:auto;text-align:center;">
+    <h2 style="margin-top:0;">Talk to Us Today</h2>
+    <p style="font-size:18px;font-weight:600;">0772 469 055</p>
+    <p style="font-size:16px;line-height:2;">0780 462 929 · 0774 121 156 · 0777 709 459</p>
+    <p style="margin-top:30px;font-size:14px;opacity:.9;">Bright Institute of Agriculture – Masindi<br>Growing Dreams, Harvesting Success</p>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/256772469055">💬</a>
+
+</body>
+</html>
