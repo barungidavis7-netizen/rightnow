@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Apply Online | Bright Institute of Agriculture – Masindi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f8f4;
+  color:#1b1b1b;
+}
+
+/* HEADER */
+header{
+  background:#1b5e20;
+  color:#fff;
+  padding:16px 22px;
+  display:flex;
+  align-items:center;
+}
+header img{height:55px;margin-right:15px;}
+header h2{margin:0;font-size:22px;}
+
+/* SECTION */
+section{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:30px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  margin-bottom:35px;
+}
+
+h2,h3{color:#1b5e20;margin-top:0;}
+p{line-height:1.6;}
+
+.notice{
+  background:#e8f5e9;
+  border-left:6px solid #1b5e20;
+  padding:18px;
+  border-radius:8px;
+}
+
+/* FORM */
+label{
+  font-weight:bold;
+  display:block;
+  margin-bottom:6px;
+}
+
+input, select, textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:18px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+
+textarea{resize:none;}
+
+button{
+  background:#1b5e20;
+  color:#fff;
+  border:none;
+  padding:16px;
+  width:100%;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{opacity:0.95;}
+
+/* FOOTER */
+footer{
+  background:#1b5e20;
+  color:#fff;
+  text-align:center;
+  padding:25px 15px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:16px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo">
+  <h2>Online Application</h2>
+</header>
+
+<section>
+
+  <!-- INTRO -->
+  <div class="card">
+    <h2>Apply for Admission</h2>
+    <p>
+      Welcome to Bright Institute of Agriculture – Masindi.
+      This online application is open to <strong>P7, S4, and S6 leavers</strong>.
+      Please fill in the form correctly. All information will be sent directly to the Director.
+    </p>
+  </div>
+
+  <!-- APPLICATION FEE -->
+  <div class="card notice">
+    <h3>📌 Application Fee</h3>
+    <p>
+      A <strong>non-refundable application fee of UGX 50,000</strong>
+      is required for processing your application.
+      <br><br>
+      <strong>Payment is made after submitting this form.</strong>
+    </p>
+  </div>
+
+  <!-- FORM -->
+  <div class="card">
+    <form onsubmit="sendToWhatsApp(); return false;">
+
+      <h3>👩‍🎓 Student Information</h3>
+
+      <label>Student Full Name</label>
+      <input type="text" id="studentName" required>
+
+      <label>Student Phone Number</label>
+      <input type="tel" id="studentPhone" required>
+
+      <label>Gender</label>
+      <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+
+      <label>Academic Level</label>
+      <select id="level" required>
+        <option value="">Select Level</option>
+        <option>P7 Leaver</option>
+        <option>S4 Leaver</option>
+        <option>S6 Leaver</option>
+      </select>
+
+      <label>Course Applying For</label>
+      <select id="course" required>
+        <option value="">Select Course</option>
+        <option>Junior Vocational Certificate in Agriculture</option>
+        <option>National Certificate in Agriculture</option>
+        <option>National Diploma in Agriculture</option>
+        <option>National Diploma in Animal Production and Management</option>
+        <option>National Diploma in Agribusiness Management</option>
+      </select>
+
+      <label>Preferred Intake</label>
+      <select id="intake" required>
+        <option value="">Select Intake</option>
+        <option>January Intake</option>
+        <option>February Intake</option>
+        <option>May Intake</option>
+        <option>August Intake</option>
+      </select>
+
+      <h3>👨‍👩‍👧 Guardian Information</h3>
+
+      <label>Guardian Full Name</label>
+      <input type="text" id="guardianName" required>
+
+      <label>Guardian Phone Number</label>
+      <input type="tel" id="guardianPhone" required>
+
+      <label>Additional Message (Optional)</label>
+      <textarea id="message" rows="4" placeholder="Any additional information..."></textarea>
+
+      <button type="submit">
+        Submit Application & Continue to WhatsApp
+      </button>
+
+    </form>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Bright Institute of Agriculture – Masindi</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/256772469055">💬</a>
+
+<script>
+function sendToWhatsApp(){
+  const text =
+    "ONLINE ADMISSION APPLICATION%0A%0A" +
+    "Student Name: " + studentName.value + "%0A" +
+    "Student Phone: " + studentPhone.value + "%0A" +
+    "Gender: " + gender.value + "%0A" +
+    "Academic Level: " + level.value + "%0A" +
+    "Course Applied For: " + course.value + "%0A" +
+    "Preferred Intake: " + intake.value + "%0A%0A" +
+    "Guardian Name: " + guardianName.value + "%0A" +
+    "Guardian Phone: " + guardianPhone.value + "%0A%0A" +
+    "Message: " + message.value + "%0A%0A" +
+    "I will send the required documents and UGX 50,000 application fee payment proof.";
+
+  window.open("https://wa.me/256772469055?text=" + text, "_blank");
+}
+</script>
+
+</body>
+</html>
