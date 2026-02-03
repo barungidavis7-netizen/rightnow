@@ -300,15 +300,50 @@ section{padding:90px 20px}
 <body>
 
 <!-- HEADER -->
+<!-- HEADER -->
 <header>
   <div class="header-wrap">
+
+    <!-- DESKTOP NAV -->
     <nav class="nav-desktop">
-      <nav class="nav-desktop">
-  <div class="nav-left">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="courses.html">Academics</a>
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Academics</a>
+      </div>
+
+      <div class="logo">
+        <img src="logo.png" alt="Bright Institute Logo">
+      </div>
+
+      <div class="nav-right">
+        <a href="admissions.html">Admissions</a>
+        <a href="fees.html">Fees</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </nav>
+
+    <!-- MOBILE NAV BAR -->
+    <nav class="nav-mobile">
+      <img src="logo.png" alt="Bright Institute Logo" style="height:50px">
+      <div class="menu-btn" onclick="openMenu()">☰</div>
+    </nav>
+
   </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="about.html" onclick="closeMenu()">About Us</a>
+  <a href="courses.html" onclick="closeMenu()">Academics</a>
+  <a href="admissions.html" onclick="closeMenu()">Admissions</a>
+  <a href="fees.html" onclick="closeMenu()">Fees</a>
+  <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+</div>
+
 
   <div class="logo"><img src="logo.png"></div>
 
@@ -475,6 +510,7 @@ setInterval(()=>{
 </body>
 
 </html>
+
 
 
 
