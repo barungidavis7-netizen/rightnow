@@ -316,22 +316,29 @@ section{padding:90px 20px}
   z-index: 99999;
 }
 
-#customizer{
+#customizer {
   position: fixed;
-  top: 50%;
-  right: -340px;   /* hidden */
-  transform: translateY(-50%);
+  bottom: 90px;
+  right: 20px;
   width: 300px;
   background: #fff;
   padding: 20px;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  transition: right .3s ease;
+
+  /* HIDDEN */
+  transform: translateY(150%);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all .3s ease;
   z-index: 99999;
 }
 
-#customizer.open{
-  right: 20px;     /* visible */
+#customizer.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 </style>
@@ -657,6 +664,7 @@ if (fab && customizer && closeBtn) {
 </body>
 
 </html>
+
 
 
 
