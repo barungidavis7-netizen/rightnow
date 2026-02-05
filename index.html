@@ -7,17 +7,19 @@
 
 <style>
 :root{
-  --green:#1f7a3f;
-  --dark:#0f2f1d;
-  --light:#f4f8f6;
+ 
+    --bg: #ffffff;
+    --text: #111111;
+    --green: #1f7a3f;
 }
 
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family: "Segoe UI", Arial, sans-serif;
-  background:#fff;
-  line-height:1.6;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height:1.6;
 }
 a{text-decoration:none}
 
@@ -293,6 +295,63 @@ section{padding:90px 20px}
   .director-video-container{
     grid-template-columns:1fr;
   }
+}
+ /* ================= FLOATING BUTTON ================= */
+
+#fab{
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  width: 55px;
+  height: 55px;
+  background: var(--green);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
+  z-index: 99999;
+}
+
+#customizer{
+  position: fixed !important;
+  top: 50%;
+  right: -340px;
+  transform: translateY(-50%);
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  transition: right .3s ease;
+  z-index: 99998;
+}
+
+#customizer{
+    position: fixed;
+    top: 50%;
+    right: -320px;
+
+    transform: translateY(-50%);
+    width: 300px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    transition: right .3s ease;
+    z-index: 99998
+      }
+
+#customizer.open{
+    right: 20px;
+}
+
+
+
+ right: 20px;
 }
 </style>
 </head>
@@ -581,6 +640,7 @@ document.getElementById("dark").onclick = () => {
 </body>
 
 </html>
+
 
 
 
