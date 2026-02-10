@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo.png">
 <title>Bright Institute of Agriculture – Masindi</title>
 
 <style>
@@ -10,14 +11,18 @@
   --green:#1f7a3f;
   --dark:#0f2f1d;
   --light:#f4f8f6;
+  --bg-primary:#fff;
+  --text-primary:#000;
 }
 
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family: "Segoe UI", Arial, sans-serif;
-  background:#fff;
+  background:var(--bg-primary);
+  color:var(--text-primary);
   line-height:1.6;
+  transition: all 0.3s ease;
 }
 a{text-decoration:none}
 
@@ -114,6 +119,70 @@ header{
   border-radius:6px;
 }
 .close-btn:hover{background:rgba(255,255,255,0.1)}
+
+/* ================= GEAR BUTTON ================= */
+.gear-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--green), #2d9a5a);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(31,122,63,0.4);
+  z-index: 1001;
+  transition: all 0.3s ease;
+  animation: rotate 20s linear infinite;
+}
+.gear-btn:hover {
+  transform: scale(1.1) rotate(360deg);
+  box-shadow: 0 12px 35px rgba(31,122,63,0.6);
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.settings-panel {
+  position: fixed;
+  bottom: 100px;
+  right: 80px;
+  background: rgba(16,32,24,0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  min-width: 220px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+.settings-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+.settings-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.settings-option:last-child { border-bottom: none; }
+.settings-option:hover {
+  color: #7CFC90;
+  padding-left: 10px;
+}
+.settings-label { margin-left: 12px; font-size: 14px; }
 
 @media(max-width:900px){
   .nav-desktop{display:none}
@@ -305,6 +374,8 @@ section{padding:90px 20px}
   .director-video-container{
     grid-template-columns:1fr;
   }
+  .gear-btn { bottom: 25px; right: 25px; width: 55px; height: 55px; font-size: 22px; }
+  .settings-panel { right: 70px; bottom: 85px; min-width: 200px; padding: 20px; }
 }
 </style>
 </head>
@@ -345,6 +416,29 @@ section{padding:90px 20px}
   <a href="fees.html">Fees</a>
   <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact</a>
+</div>
+
+<!-- FLOATING GEAR BUTTON -->
+<button class="gear-btn" onclick="toggleSettings()" title="Customize">⚙️</button>
+<div class="settings-panel" id="settingsPanel">
+  <div class="settings-option" onclick="changeTheme('luxury')">
+    <span>✨</span><span class="settings-label">Luxury Gold</span>
+  </div>
+  <div class="settings-option" onclick="changeTheme('modern')">
+    <span>🎨</span><span class="settings-label">Modern Green</span>
+  </div>
+  <div class="settings-option" onclick="changeTheme('dark')">
+    <span>🌙</span><span class="settings-label">Dark Mode</span>
+  </div>
+  <div class="settings-option" onclick="changeFont('serif')">
+    <span>📖</span><span class="settings-label">Elegant Font</span>
+  </div>
+  <div class="settings-option" onclick="changeFont('modern')">
+    <span>✏️</span><span class="settings-label">Modern Font</span>
+  </div>
+  <div class="settings-option" onclick="resetTheme()">
+    <span>🔄</span><span class="settings-label">Reset</span>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -482,8 +576,51 @@ function toggleMenu() {
   menu.classList.toggle('active');
 }
 
-function openMenu(){document.getElementById('mobileMenu').style.right="0"}
-function closeMenu(){document.getElementById('mobileMenu').style.right="-100%"}
+function toggleSettings() {
+  const panel = document.getElementById('settingsPanel');
+  panel.classList.toggle('active');
+}
+
+function changeTheme(theme) {
+  const root = document.documentElement;
+  if (theme === 'luxury') {
+    root.style.setProperty('--green', '#D4AF37');
+    root.style.setProperty('--light', '#FDF6E3');
+    root.style.setProperty('--bg-primary', '#FEF9E7');
+    root.style.setProperty('--text-primary', '#2C1810');
+  } else if (theme === 'modern') {
+    root.style.setProperty('--green', '#1f7a3f');
+    root.style.setProperty('--light', '#f4f8f6');
+    root.style.setProperty('--bg-primary', '#fff');
+    root.style.setProperty('--text-primary', '#000');
+  } else if (theme === 'dark') {
+    root.style.setProperty('--green', '#4CAF50');
+    root.style.setProperty('--light', '#2D2D2D');
+    root.style.setProperty('--bg-primary', '#1a1a1a');
+    root.style.setProperty('--text-primary', '#E0E0E0');
+  }
+  toggleSettings();
+}
+
+function changeFont(type) {
+  if (type === 'serif') {
+    document.body.style.fontFamily = '"Georgia", "Times New Roman", serif';
+  } else {
+    document.body.style.fontFamily = '"Segoe UI", Arial, sans-serif';
+  }
+  toggleSettings();
+}
+
+function resetTheme() {
+  const root = document.documentElement;
+  root.style.setProperty('--green', '#1f7a3f');
+  root.style.setProperty('--dark', '#0f2f1d');
+  root.style.setProperty('--light', '#f4f8f6');
+  root.style.setProperty('--bg-primary', '#fff');
+  root.style.setProperty('--text-primary', '#000');
+  document.body.style.fontFamily = '"Segoe UI", Arial, sans-serif';
+  toggleSettings();
+}
 
 const slides=document.querySelectorAll('.slide');
 const dots=document.querySelectorAll('.dot');
