@@ -123,20 +123,25 @@ A <strong>non-refundable application fee of UGX 50,000</strong> is required for 
 </div>
 <div class="card">
 <form onsubmit="sendToWhatsApp(); return false;" enctype="multipart/form-data">
-
 <h3>📝 Student Information</h3>
 
 <label>Reporting Date</label>
 <input type="date" id="reportingDate" required />
 
-<label>Student Passport Photo (Upload)</label>
+<label>Student Passport Photo</label>
 <input type="file" id="studentPhoto" accept="image/*" />
 
-<label>Full Name</label>
-<input type="text" id="studentFullName" required />
+<label>Other Names</label>
+<input type="text" id="otherNames" />
+
+<label>Surname</label>
+<input type="text" id="surname" />
 
 <label>Phone Number</label>
-<input type="tel" id="studentPhone" required />
+<input type="tel" id="phone" required />
+
+<label>Email Address</label>
+<input type="email" id="email" />
 
 <label>Gender</label>
 <select id="gender" required>
@@ -145,11 +150,8 @@ A <strong>non-refundable application fee of UGX 50,000</strong> is required for 
   <option>Female</option>
 </select>
 
-<label>Home District</label>
-<input type="text" id="homeDistrict" required />
-
 <label>Physical address of Parent/Guardian Residence</label>
-<input type="text" id="guardianResidence" required />
+<input type="text" id="guardianResidence" />
 
 <label>P.O Box</label>
 <input type="text" id="poBox" />
@@ -159,6 +161,9 @@ A <strong>non-refundable application fee of UGX 50,000</strong> is required for 
 
 <label>Email Address</label>
 <input type="email" id="parentEmail" />
+
+<label>Home District</label>
+<input type="text" id="homeDistrict" />
 
 <label>Sub-County</label>
 <input type="text" id="subCounty" />
@@ -238,17 +243,17 @@ A <strong>non-refundable application fee of UGX 50,000</strong> is required for 
 <label>Details of health problem, if any</label>
 <textarea id="healthProblems" rows="3"></textarea>
 
-<label>Attach Doctor's Report (Upload)</label>
+<label>Attach Doctor's Report</label>
 <input type="file" id="doctorReport" accept="application/pdf,image/*" />
 
 <h3>Guardian Information</h3>
 <label>Guardian Full Name</label>
-<input type="text" id="guardianFullName" required />
+<input type="text" id="guardianFullName" />
 
 <label>Guardian Phone Number</label>
-<input type="tel" id="guardianPhone" required />
+<input type="tel" id="guardianPhone" />
 
-<label>Guardian Passport Photo (Upload)</label>
+<label>Guardian Passport Photo</label>
 <input type="file" id="guardianPhoto" accept="image/*" />
 
 <label>Physical address of Guardian</label>
@@ -296,28 +301,30 @@ Please send a screenshot of your payment of UGX 50,000 to:<br>
 - Or deposit to bank account: <strong>Finca Bank 10330200003</strong><br>
 After payment, upload the proof below:
 </p>
-<label>Upload Payment Screenshot / Proof</label>
+<label>Upload Payment Proof</label>
 <input type="file" id="paymentProof" accept="image/*,application/pdf" />
 
 <button type="submit">Submit Application & Continue to WhatsApp</button>
+
 </form>
 </div>
 </section>
 <footer>
 <p>© 2026 Bright Institute of Agriculture – Masindi</p>
 </footer>
-<a class="whatsapp-float" href="https://wa.me/256772469055">💬</a>
+<a class="whatsapp-float" href="https://wa.me/256772469055" target="_blank">💬</a>
 <script>
 function sendToWhatsApp() {
   const reportDate = document.getElementById('reportingDate').value;
-  const fullName = document.getElementById('studentFullName').value;
-  const phone = document.getElementById('studentPhone').value;
+  const fullName = document.getElementById('otherNames').value + " " + document.getElementById('surname').value;
+  const phone = document.getElementById('phone').value;
+  const email = document.getElementById('email').value;
   const gender = document.getElementById('gender').value;
-  const homeDistrict = document.getElementById('homeDistrict').value;
   const guardianRes = document.getElementById('guardianResidence').value;
   const poBox = document.getElementById('poBox').value;
   const parentTel = document.getElementById('parentTel').value;
   const parentEmail = document.getElementById('parentEmail').value;
+  const homeDistrict = document.getElementById('homeDistrict').value;
   const subCounty = document.getElementById('subCounty').value;
   const parish = document.getElementById('parish').value;
   const village = document.getElementById('village').value;
@@ -354,57 +361,60 @@ function sendToWhatsApp() {
   const parentOtherNames = document.getElementById('parentOtherNames').value;
   const hobby1 = document.getElementById('hobby1').value;
   const hobby2 = document.getElementById('hobby2').value;
+  const course = document.getElementById('course').value;
 
   const message = 
-    "ONLINE ADMISSION APPLICATION\n\n" +
-    "Reporting Date: " + reportDate + "\n" +
-    "Full Name: " + fullName + "\n" +
-    "Phone: " + phone + "\n" +
-    "Gender: " + gender + "\n" +
-    "Home District: " + homeDistrict + "\n" +
-    "Physical Address of Parent/Guardian Residence: " + guardianRes + "\n" +
-    "P.O Box: " + poBox + "\n" +
-    "Parent Tel: " + parentTel + "\n" +
-    "Parent Email: " + parentEmail + "\n" +
-    "Sub-County: " + subCounty + "\n" +
-    "Parish: " + parish + "\n" +
-    "Village: " + village + "\n" +
-    "District: " + district + "\n" +
-    "School Name: " + schoolName + "\n" +
-    "PLE Index No: " + pleIndex + "\n" +
-    "PLE Grade: " + pleGrade + "\n" +
-    "UCE Index No: " + uceIndex + "\n" +
-    "UACE Index No: " + uaceIndex + "\n" +
-    "Health Problems: " + healthProblems + "\n\n" +
-    "S.4 Scores:\n" +
-    "English: " + s4English + "\n" +
-    "Agriculture: " + s4Agriculture + "\n" +
-    "Maths: " + s4Maths + "\n" +
-    "Biology: " + s4Biology + "\n" +
-    "Chemistry: " + s4Chemistry + "\n" +
-    "Physics: " + s4Physics + "\n" +
-    "Economics: " + s4Economics + "\n" +
-    "Entrepreneurship: " + s4Entrepreneurship + "\n\n" +
-    "S.6 Scores:\n" +
-    "English: " + s6English + "\n" +
-    "Biology: " + s6Biology + "\n" +
-    "Chemistry: " + s6Chemistry + "\n" +
-    "Physics: " + s6Physics + "\n" +
-    "Economics: " + s6Economics + "\n" +
-    "Agriculture: " + s6Agriculture + "\n" +
-    "Entrepreneurship: " + s6Entrepreneurship + "\n\n" +
-    "Guardian Full Name: " + guardianFullName + "\n" +
-    "Guardian Phone: " + guardianPhone + "\n" +
-    "Guardian Address: " + guardianAddress + "\n" +
-    "Guardian District: " + guardianDistrict + "\n" +
-    "Guardian Sub-County: " + guardianSubCounty + "\n" +
-    "Guardian Parish: " + guardianParish + "\n" +
-    "Guardian Village: " + guardianVillage + "\n" +
-    "Parent's Surname: " + parentSurname + "\n" +
-    "Parent's Other Names: " + parentOtherNames + "\n" +
-    "Hobbies:\n1. " + hobby1 + "\n2. " + hobby2;
+    "ONLINE ADMISSION APPLICATION\\n\\n" +
+    "Reporting Date: " + reportDate + "\\n" +
+    "Full Name: " + fullName + "\\n" +
+    "Phone: " + phone + "\\n" +
+    "Email: " + email + "\\n" +
+    "Gender: " + gender + "\\n" +
+    "Home District: " + homeDistrict + "\\n" +
+    "Physical Address of Parent/Guardian Residence: " + guardianRes + "\\n" +
+    "P.O Box: " + poBox + "\\n" +
+    "Parent Tel: " + parentTel + "\\n" +
+    "Parent Email: " + parentEmail + "\\n" +
+    "Sub-County: " + subCounty + "\\n" +
+    "Parish: " + parish + "\\n" +
+    "Village: " + village + "\\n" +
+    "District: " + district + "\\n" +
+    "School Name: " + schoolName + "\\n" +
+    "PLE Index No: " + pleIndex + "\\n" +
+    "PLE Grade: " + pleGrade + "\\n" +
+    "UCE Index No: " + uceIndex + "\\n" +
+    "UACE Index No: " + uaceIndex + "\\n" +
+    "Health Problems: " + healthProblems + "\\n\\n" +
+    "S.4 Scores:\\n" +
+    "English: " + s4English + "\\n" +
+    "Agriculture: " + s4Agriculture + "\\n" +
+    "Maths: " + s4Maths + "\\n" +
+    "Biology: " + s4Biology + "\\n" +
+    "Chemistry: " + s4Chemistry + "\\n" +
+    "Physics: " + s4Physics + "\\n" +
+    "Economics: " + s4Economics + "\\n" +
+    "Entrepreneurship: " + s4Entrepreneurship + "\\n\\n" +
+    "S.6 Scores:\\n" +
+    "English: " + s6English + "\\n" +
+    "Biology: " + s6Biology + "\\n" +
+    "Chemistry: " + s6Chemistry + "\\n" +
+    "Physics: " + s6Physics + "\\n" +
+    "Economics: " + s6Economics + "\\n" +
+    "Agriculture: " + s6Agriculture + "\\n" +
+    "Entrepreneurship: " + s6Entrepreneurship + "\\n\\n" +
+    "Guardian Full Name: " + guardianFullName + "\\n" +
+    "Guardian Phone: " + guardianPhone + "\\n" +
+    "Guardian Address: " + guardianAddress + "\\n" +
+    "Guardian District: " + guardianDistrict + "\\n" +
+    "Guardian Sub-County: " + guardianSubCounty + "\\n" +
+    "Guardian Parish: " + guardianParish + "\\n" +
+    "Guardian Village: " + guardianVillage + "\\n" +
+    "Parent's Surname: " + parentSurname + "\\n" +
+    "Parent's Other Names: " + parentOtherNames + "\\n" +
+    "Hobbies:\\n1. " + hobby1 + "\\n2. " + hobby2 + "\\n" +
+    "Course Applied For: " + course;
 
-  // Open WhatsApp with message
+  // Send message to WhatsApp
   const whatsappNumber = "256772469055"; // your number
   window.open("https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message), "_blank");
 }
