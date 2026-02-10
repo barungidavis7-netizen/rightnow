@@ -27,6 +27,7 @@ header{
   top:0;left:0;width:100%;
   background:#1f2f25;
   z-index:1000;
+  transition: all 0.3s ease;
 }
 .header-wrap{
   max-width:1300px;
@@ -44,28 +45,75 @@ header{
 }
 .nav-left{justify-content:flex-end}
 .nav-right{justify-content:flex-start}
-.logo img{height:60px}
-.nav-desktop a{color:#fff}
+.logo { 
+  perspective: 1000px;
+  display: inline-block;
+}
+.logo img{
+  height:60px;
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+}
+.logo:hover img {
+  transform: rotateY(15deg) rotateX(10deg) translateZ(20px);
+  filter: brightness(1.2);
+}
+
+.nav-desktop a{
+  color:#fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.nav-desktop a:hover{
+  background: rgba(255,255,255,0.1);
+}
 
 .nav-mobile{display:none;justify-content:space-between;align-items:center}
-.menu-btn{font-size:30px;color:#fff;cursor:pointer}
+.menu-btn{
+  font-size:30px;color:#fff;cursor:pointer;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.menu-btn:hover{background:rgba(255,255,255,0.1)}
 
 .mobile-menu{
   position:fixed;
-  top:0;right:-100%;
-  width:100%;height:100vh;
+  top:90px;right:-320px;
+  width:300px;height:calc(100vh - 90px);
   background:#102018;
   color:#fff;
   padding:30px;
-  transition:.4s;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+  transition:.4s ease;
+  z-index:999;
+  overflow-y:auto;
 }
+.mobile-menu.active{right:0}
 .mobile-menu a{
   display:block;
-  padding:15px 0;
+  padding:18px 0;
   font-size:20px;
   border-bottom:1px solid rgba(255,255,255,.15);
+  color:#fff;
+  transition: all 0.3s;
 }
-.close-btn{font-size:30px;text-align:right;cursor:pointer;margin-bottom:20px}
+.mobile-menu a:hover{
+  color:#7CFC90;
+  padding-left:20px;
+  background:rgba(255,255,255,0.05);
+}
+.close-btn{
+  font-size:30px;
+  text-align:right;
+  cursor:pointer;
+  margin-bottom:25px;
+  display:block;
+  padding:10px;
+  border-radius:6px;
+}
+.close-btn:hover{background:rgba(255,255,255,0.1)}
 
 @media(max-width:900px){
   .nav-desktop{display:none}
@@ -268,30 +316,35 @@ section{padding:90px 20px}
   <div class="header-wrap">
     <nav class="nav-desktop">
       <div class="nav-left">
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Academics</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html">Academics</a>
       </div>
       <div class="logo"><img src="logo.png"></div>
       <div class="nav-right">
-        <a href="#">Admissions</a>
-        <a href="#">Fees</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="fees.html">Fees</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
 
     <nav class="nav-mobile">
       <img src="logo.png" style="height:50px">
-      <div class="menu-btn" onclick="openMenu()">☰</div>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
     </nav>
   </div>
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <div class="close-btn" onclick="closeMenu()">✕</div>
-  <a href="#">Home</a><a href="#">About</a><a href="#">Academics</a>
-  <a href="#">Admissions</a><a href="#">Fees</a><a href="#">Gallery</a>
+  <div class="close-btn" onclick="toggleMenu()">✕</div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="academics.html">Academics</a>
+  <a href="admissions.html">Admissions</a>
+  <a href="fees.html">Fees</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -424,8 +477,14 @@ section{padding:90px 20px}
 </footer>
 
 <script>
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('active');
+}
+
 function openMenu(){document.getElementById('mobileMenu').style.right="0"}
 function closeMenu(){document.getElementById('mobileMenu').style.right="-100%"}
+
 const slides=document.querySelectorAll('.slide');
 const dots=document.querySelectorAll('.dot');
 let i=0;
