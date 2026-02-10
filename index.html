@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="logo.png">
+<meta name="description" content="Bright Institute of Agriculture Masindi - Practical farming diplomas, full-time & weekend courses Uganda">
+<link rel="canonical" href="https://yourusername.github.io/">
 <title>Bright Institute of Agriculture – Masindi</title>
 
 <style>
@@ -184,9 +186,26 @@ header{
 }
 .settings-label { margin-left: 12px; font-size: 14px; }
 
+/* SCROLL ANIMATIONS */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-program-card {
+  min-height: 48px;
+}
+
 @media(max-width:900px){
   .nav-desktop{display:none}
   .nav-mobile{display:flex}
+  .gear-btn { bottom: 25px; right: 25px; width: 55px; height: 55px; font-size: 22px; }
+  .settings-panel { right: 70px; bottom: 85px; min-width: 200px; padding: 20px; }
 }
 
 body{padding-top:90px}
@@ -314,6 +333,10 @@ section{padding:90px 20px}
   border-radius:18px;
   color:#000;
   transition:.3s;
+  min-height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .text-program-card:hover{
   transform:translateY(-6px);
@@ -374,13 +397,25 @@ section{padding:90px 20px}
   .director-video-container{
     grid-template-columns:1fr;
   }
-  .gear-btn { bottom: 25px; right: 25px; width: 55px; height: 55px; font-size: 22px; }
-  .settings-panel { right: 70px; bottom: 85px; min-width: 200px; padding: 20px; }
 }
 </style>
 </head>
 
 <body>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollegeOrUniversity",
+  "name": "Bright Institute of Agriculture Masindi",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Masindi",
+    "addressCountry": "UG"
+  },
+  "telephone": "0772469055"
+}
+</script>
 
 <!-- HEADER -->
 <header>
@@ -391,7 +426,7 @@ section{padding:90px 20px}
         <a href="about.html">About Us</a>
         <a href="academics.html">Academics</a>
       </div>
-      <div class="logo"><img src="logo.png"></div>
+      <div class="logo"><img src="logo.png" alt="Bright Institute of Agriculture Masindi logo"></div>
       <div class="nav-right">
         <a href="admissions.html">Admissions</a>
         <a href="fees.html">Fees</a>
@@ -401,7 +436,7 @@ section{padding:90px 20px}
     </nav>
 
     <nav class="nav-mobile">
-      <img src="logo.png" style="height:50px">
+      <img src="logo.png" alt="Bright Institute logo" style="height:50px">
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
     </nav>
   </div>
@@ -419,7 +454,7 @@ section{padding:90px 20px}
 </div>
 
 <!-- FLOATING GEAR BUTTON -->
-<button class="gear-btn" onclick="toggleSettings()" title="Customize">⚙️</button>
+<button class="gear-btn" onclick="toggleSettings()" title="Customize" aria-label="Customize website">⚙️</button>
 <div class="settings-panel" id="settingsPanel">
   <div class="settings-option" onclick="changeTheme('luxury')">
     <span>✨</span><span class="settings-label">Luxury Gold</span>
@@ -466,7 +501,7 @@ section{padding:90px 20px}
 <!-- DIRECTOR MESSAGE -->
 <section class="director-section">
   <div class="director-container">
-    <div class="director-image"><img src="director.jpg"></div>
+    <div class="director-image"><img src="director.jpg" alt="Director Barungi Davis" loading="lazy"></div>
     <div class="director-content">
       <h2>Message from the Director</h2>
       <h3>Mr. Barungi Davis</h3>
@@ -490,7 +525,7 @@ section{padding:90px 20px}
 <!-- GRADUATION -->
 <section class="graduation-section">
   <div class="graduation-container">
-    <div class="graduation-image"><img src="direct.jpg"></div>
+    <div class="graduation-image"><img src="direct.jpg" alt="Graduation ceremony" loading="lazy"></div>
     <div class="graduation-content">
       <h2>Celebrating Achievement & Excellence</h2>
       <p>Graduation reflects discipline, persistence, and mastery.</p>
@@ -507,7 +542,7 @@ section{padding:90px 20px}
 <section class="director-video-section">
   <div class="director-video-container">
     <div class="video-wrapper">
-      <video controls poster="director.jpg">
+      <video controls poster="director.jpg" loading="lazy">
         <source src="director-message.mp4" type="video/mp4">
       </video>
     </div>
@@ -550,7 +585,7 @@ section{padding:90px 20px}
 <footer class="agri-footer">
   <div class="agri-footer-container">
     <div>
-      <img src="logo.png" class="footer-logo">
+      <img src="logo.png" alt="Bright Institute footer logo" class="footer-logo" loading="lazy">
       <p>Growing Dreams, Harvesting Success</p>
     </div>
     <div class="footer-links">
@@ -621,6 +656,20 @@ function resetTheme() {
   document.body.style.fontFamily = '"Segoe UI", Arial, sans-serif';
   toggleSettings();
 }
+
+// Scroll animations
+function handleScroll() {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      section.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScroll);
+handleScroll();
 
 const slides=document.querySelectorAll('.slide');
 const dots=document.querySelectorAll('.dot');
