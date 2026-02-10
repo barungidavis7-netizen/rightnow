@@ -59,26 +59,20 @@ header{
 }
 .logo {
   display: inline-block;
+  /* Apply oscillating rotation animation for clockwise then anticlockwise movement */
+  animation: oscillateRotation 4s infinite ease-in-out;
 }
 .logo img{
   height:60px;
   transition: all 0.6s ease;
   transform-style: preserve-3d;
-  /* Apply the rotation animation */
-  animation: rotate3D 20s linear infinite;
 }
 
-/* Define the 3D rotation keyframes */
-@keyframes rotate3D {
-  0% {
-    transform: rotateY(0deg) rotateX(0deg);
-  }
-  50% {
-    transform: rotateY(180deg) rotateX(180deg);
-  }
-  100% {
-    transform: rotateY(360deg) rotateX(360deg);
-  }
+/* Define the oscillating rotation keyframes */
+@keyframes oscillateRotation {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(360deg); }
+  100% { transform: rotateY(0deg); }
 }
 
 /* Keep your existing styles for other elements ... (unchanged) */
@@ -693,4 +687,3 @@ setInterval(()=>{
 
 </body>
 </html>
-
